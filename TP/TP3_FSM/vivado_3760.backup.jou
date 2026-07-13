@@ -1,0 +1,41 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Jul  8 15:25:30 2026
+# Process ID: 3760
+# Current directory: C:/Users/33651/Desktop/projet_ajc/TP3_FSM
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22548 C:\Users\33651\Desktop\projet_ajc\TP3_FSM\TP3_FSM.xpr
+# Log file: C:/Users/33651/Desktop/projet_ajc/TP3_FSM/vivado.log
+# Journal file: C:/Users/33651/Desktop/projet_ajc/TP3_FSM\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/33651/Desktop/projet_ajc/TP3_FSM/TP3_FSM.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source tb_tp_fsm.tcl
+run all
+launch_simulation -mode post-implementation -type timing
+source tb_tp_fsm.tcl
+run all
+launch_simulation -mode post-synthesis -type functional
+source tb_tp_fsm.tcl
+run all
+current_sim simulation_1
+close_sim
+launch_simulation
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+set_property target_constrs_file C:/Users/33651/Desktop/projet_ajc/TP3_FSM/TP3_FSM.srcs/constrs_1/new/pin.xdc [current_fileset -constrset]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+close_design
+launch_simulation
+current_sim simulation_3
+close_sim
+close_sim

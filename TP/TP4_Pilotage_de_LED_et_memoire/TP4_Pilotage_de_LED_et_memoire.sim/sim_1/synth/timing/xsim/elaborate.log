@@ -1,0 +1,8 @@
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: F:/vivado_2020.2/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 5049af02125e4c06913622e1ea396052 --incr --debug typical --relax --mt 2 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot testbench_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-718] formal port <restart> does not exist in entity <\FSM\>.  Please compare the definition of block <\FSM\> to its component declaration and its instantion to detect the mismatch. [C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.srcs/sim_1/new/testbench.vhd:57]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
