@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Jul  7 17:37:09 2026
+# Process ID: 22132
+# Current directory: C:/Users/33651/Desktop/test_ajc/TP2_compteur/TP_2_cmpteur
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent26796 C:\Users\33651\Desktop\test_ajc\TP2_compteur\TP_2_cmpteur\TP_2_cmpteur.xpr
+# Log file: C:/Users/33651/Desktop/test_ajc/TP2_compteur/TP_2_cmpteur/vivado.log
+# Journal file: C:/Users/33651/Desktop/test_ajc/TP2_compteur/TP_2_cmpteur\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/33651/Desktop/test_ajc/TP2_compteur/TP_2_cmpteur/TP_2_cmpteur.xpr
+update_compile_order -fileset sources_1
