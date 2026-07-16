@@ -2,12 +2,12 @@
 # Webtalk v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Wed Jul  8 15:25:59 2026
-# Process ID: 25444
-# Current directory: C:/Users/33651/Desktop/projet_ajc/TP3_FSM/TP3_FSM.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source C:/Users/33651/Desktop/projet_ajc/TP3_FSM/TP3_FSM.sim/sim_1/behav/xsim/xsim.dir/tb_tp_fsm_behav/webtalk/xsim_webtalk.tcl -notrace
-# Log file: C:/Users/33651/Desktop/projet_ajc/TP3_FSM/TP3_FSM.sim/sim_1/behav/xsim/webtalk.log
-# Journal file: C:/Users/33651/Desktop/projet_ajc/TP3_FSM/TP3_FSM.sim/sim_1/behav/xsim\webtalk.jou
+# Start of session at: Thu Jul 16 10:18:24 2026
+# Process ID: 7528
+# Current directory: C:/Users/33651/Desktop/test_ajc/TP/TP3_FSM/TP3_FSM.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source C:/Users/33651/Desktop/test_ajc/TP/TP3_FSM/TP3_FSM.sim/sim_1/behav/xsim/xsim.dir/tb_tp_fsm_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/33651/Desktop/test_ajc/TP/TP3_FSM/TP3_FSM.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: C:/Users/33651/Desktop/test_ajc/TP/TP3_FSM/TP3_FSM.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source C:/Users/33651/Desktop/projet_ajc/TP3_FSM/TP3_FSM.sim/sim_1/behav/xsim/xsim.dir/tb_tp_fsm_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Wed Jul  8 15:26:00 2026...
+source C:/Users/33651/Desktop/test_ajc/TP/TP3_FSM/TP3_FSM.sim/sim_1/behav/xsim/xsim.dir/tb_tp_fsm_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Jul 16 10:18:25 2026...

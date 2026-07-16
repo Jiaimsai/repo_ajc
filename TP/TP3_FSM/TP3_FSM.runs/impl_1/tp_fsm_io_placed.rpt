@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date                      : Thu Jul  9 11:42:10 2026
+| Date                      : Thu Jul 16 11:15:03 2026
 | Host                      : LAPTOP-9066CLLC running 64-bit major release  (build 9200)
 | Command                   : report_io -file tp_fsm_io_placed.rpt
 | Design                    : tp_fsm
@@ -114,7 +114,7 @@ Table of Contents
 | D17        |             |            | GND                     | GND           |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | D18        |             | High Range | IO_L3N_T0_DQS_AD1N_35   | User IO       |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | D19        |             | High Range | IO_L4P_T0_35            | User IO       |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| D20        | restart     | High Range | IO_L4N_T0_35            | INPUT         | LVCMOS33    |      35 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| D20        | resetn      | High Range | IO_L4N_T0_35            | INPUT         | LVCMOS33    |      35 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | E1         |             |            | PS_DDR_DQ7_502          | PSS IO        |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | E2         |             |            | PS_DDR_DQ8_502          | PSS IO        |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | E3         |             |            | PS_DDR_DQ9_502          | PSS IO        |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |

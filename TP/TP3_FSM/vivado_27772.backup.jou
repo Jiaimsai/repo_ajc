@@ -1,0 +1,48 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Jul 16 09:38:59 2026
+# Process ID: 27772
+# Current directory: C:/Users/33651/Desktop/test_ajc/TP/TP3_FSM
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16288 C:\Users\33651\Desktop\test_ajc\TP\TP3_FSM\TP3_FSM.xpr
+# Log file: C:/Users/33651/Desktop/test_ajc/TP/TP3_FSM/vivado.log
+# Journal file: C:/Users/33651/Desktop/test_ajc/TP/TP3_FSM\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/33651/Desktop/test_ajc/TP/TP3_FSM/TP3_FSM.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source tb_tp_fsm.tcl
+run all
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+close_sim
+launch_simulation
+reset_run synth_1
+launch_simulation
+source tb_tp_fsm.tcl
+run all
+close_sim
+launch_simulation
+source tb_tp_fsm.tcl
+restart
+run all
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+set_param general.maxthreads 16
+open_run synth_1 -name synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+close_design
+close_sim

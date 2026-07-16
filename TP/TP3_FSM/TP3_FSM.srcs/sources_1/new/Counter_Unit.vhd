@@ -35,32 +35,28 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity Counter_Unit is
     generic (
-    max : std_logic_vector := x"2FAF080"
+    max : std_logic_vector := x"BEBC200"
     );
-    Port ( clk : in STD_LOGIC;
-           end_counter : out STD_LOGIC;
-           restart : in std_logic;
-           Din : buffer std_logic_vector (27 downto 0)
---           led : inout std_logic
-           
+    Port ( clk          : in STD_LOGIC;
+           end_counter  : out STD_LOGIC;
+           resetn       : in std_logic;
+           Din          : buffer std_logic_vector (27 downto 0)           
            );
 end Counter_Unit;
 
 architecture Behavioral of Counter_Unit is
---signal Din : std_logic_vector( 27 downto 0) := x"0000001";
---signal max : std_logic_vector( 27 downto 0) := x"BEBC200";--x"BEBC200";
+
 signal led : std_logic;
 
 begin
 process(clk)
     begin
         if (rising_edge(clk)) then 
-            if (restart = '1')then
+            if (resetn = '1')then
                 Din <= x"0000001"; 
                 led <= '0';
             else
                 if (Din < max) then 
-                --if (Din < x"5F5E100") then 
                     Din <= Din + x"1";
                 else 
                     Din <= x"0000001";                

@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Jul 16 14:28:07 2026
+# Process ID: 30428
+# Current directory: C:/Users/33651/Desktop/test_ajc/TP/TP3_FSM
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11788 C:\Users\33651\Desktop\test_ajc\TP\TP3_FSM\TP3_FSM.xpr
+# Log file: C:/Users/33651/Desktop/test_ajc/TP/TP3_FSM/vivado.log
+# Journal file: C:/Users/33651/Desktop/test_ajc/TP/TP3_FSM\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/33651/Desktop/test_ajc/TP/TP3_FSM/TP3_FSM.xpr
+update_compile_order -fileset sources_1

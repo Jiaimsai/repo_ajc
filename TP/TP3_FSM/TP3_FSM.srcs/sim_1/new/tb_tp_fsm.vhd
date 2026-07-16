@@ -6,7 +6,7 @@ end tb_tp_fsm;
 
 architecture behavioral of tb_tp_fsm is
 
-	signal restart      : std_logic := '0';
+	signal resetn      : std_logic := '0';
 	signal clk         : std_logic := '0';
 	--a completer 
 	--signal end_counter : std_logic;
@@ -19,7 +19,7 @@ architecture behavioral of tb_tp_fsm is
 	component tp_fsm
 		port ( 
 			clk			: in std_logic; 
-			restart		: in std_logic
+			resetn		: in std_logic
 			--a completer
 			--end_counter : out std_logic
 		 );
@@ -31,7 +31,7 @@ architecture behavioral of tb_tp_fsm is
 	dut: tp_fsm
         port map (
             clk => clk, 
-            restart => restart
+            resetn => resetn
 			--a completer
 			--end_counter => end_counter
         );
@@ -47,10 +47,10 @@ architecture behavioral of tb_tp_fsm is
 	process 
 	begin        
 	
-		restart <= '1';
+		resetn <= '1';
 		--wait for period*10;
-		wait for 2ms;    
-		restart <= '0';
+		wait for 20ms;    
+		resetn <= '0';
 	    wait for  1000000ms;
 		--a completer
 

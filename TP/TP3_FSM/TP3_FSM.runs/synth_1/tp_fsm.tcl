@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/33651/Desktop/projet_ajc/TP3_FSM/TP3_FSM.runs/synth_1/tp_fsm.tcl"
+  variable script "C:/Users/33651/Desktop/test_ajc/TP/TP3_FSM/TP3_FSM.runs/synth_1/tp_fsm.tcl"
   variable category "vivado_synth"
 }
 
@@ -72,27 +72,23 @@ proc create_report { reportName command } {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param general.maxThreads 16
 set_param chipscope.maxJobs 4
-set_param synth.incrementalSynthesisCache C:/Users/33651/Desktop/projet_ajc/TP3_FSM/.Xil/Vivado-18660-LAPTOP-9066CLLC/incrSyn
-set_param xicom.use_bs_reader 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z010clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/33651/Desktop/projet_ajc/TP3_FSM/TP3_FSM.cache/wt [current_project]
-set_property parent.project_path C:/Users/33651/Desktop/projet_ajc/TP3_FSM/TP3_FSM.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/33651/Desktop/test_ajc/TP/TP3_FSM/TP3_FSM.cache/wt [current_project]
+set_property parent.project_path C:/Users/33651/Desktop/test_ajc/TP/TP3_FSM/TP3_FSM.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/33651/Desktop/projet_ajc/TP3_FSM/TP3_FSM.cache/ip [current_project]
+set_property ip_output_repo c:/Users/33651/Desktop/test_ajc/TP/TP3_FSM/TP3_FSM.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
-  C:/Users/33651/Desktop/projet_ajc/TP3_FSM/TP3_FSM.srcs/sources_1/new/Counter_Unit.vhd
-  C:/Users/33651/Desktop/projet_ajc/TP3_FSM/TP3_FSM.srcs/sources_1/new/tp_fsm.vhd
+  C:/Users/33651/Desktop/test_ajc/TP/TP3_FSM/TP3_FSM.srcs/sources_1/new/Counter_Unit.vhd
+  C:/Users/33651/Desktop/test_ajc/TP/TP3_FSM/TP3_FSM.srcs/sources_1/new/tp_fsm.vhd
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -103,8 +99,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/33651/Desktop/projet_ajc/TP3_FSM/TP3_FSM.srcs/constrs_1/new/pin.xdc
-set_property used_in_implementation false [get_files C:/Users/33651/Desktop/projet_ajc/TP3_FSM/TP3_FSM.srcs/constrs_1/new/pin.xdc]
+read_xdc C:/Users/33651/Desktop/test_ajc/TP/TP3_FSM/TP3_FSM.srcs/constrs_1/new/pin.xdc
+set_property used_in_implementation false [get_files C:/Users/33651/Desktop/test_ajc/TP/TP3_FSM/TP3_FSM.srcs/constrs_1/new/pin.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

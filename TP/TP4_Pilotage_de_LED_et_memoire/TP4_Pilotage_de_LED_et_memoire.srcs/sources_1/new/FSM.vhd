@@ -8,127 +8,81 @@ entity FSM is
         max : std_logic_vector := x"5F5E100"--BEBC200 007A120 5F5E100
     );
     port ( 
-		clk			: in std_logic; 
-        color_code,btn0 : in std_logic;
-        led_r,led_g,led_b : out std_logic
+		clk			      : in std_logic; --horloge
+        color_code        : in std_logic; --choix de la couleur
+        btn0              : in std_logic; --update 
+        led_r,led_g,led_b : out std_logic -- led
      );
 end FSM;
 
 architecture behavioral of FSM is
 
-    type state is (idle, state1, state2, state3); --a modifier avec vos etats
-    type color is (red,green,blue); --a modifier avec vos etats
-    signal current_color : color;  
-    signal restart : std_logic := '0';
-    signal next_color : color;    
-    signal current_state : state;  
-    signal next_state : state;	   
-    signal cnt : std_logic_vector (7 downto 0) := x"00";
-    signal test : std_logic;
-    signal update : std_logic;
-    signal test_btn : std_logic;
-    signal led : std_logic;
-    signal clr : std_logic;
-    signal Din : std_logic_vector (27 downto 0);
-    signal end_counter : std_logic;
-    
-	component Counter_Unit 
-	port ( clk : in STD_LOGIC;
-           end_counter : out STD_LOGIC;
-           restart : in std_logic;
-           Din : buffer std_logic_vector (27 downto 0));
+    type color is (red,green,blue); 
+    signal resetn        : std_logic := '0';                --reset
+    signal current_color : color;                           --etat dans lequel on se trouve actuellement
+    signal next_color    : color;                           --etat dans lequel on passera au prochain coup d'horloge
+    signal update        : std_logic;                       --signal interne d'update afin de manipuler simplement
+    signal Din           : std_logic_vector (27 downto 0);  --compteur
+    signal end_counter   : std_logic;                       --signal indiquant que la Valeur max a été attaint
+        
+	component Counter_Unit -- déclaration de notre composant counter unit
+	port ( clk          : in STD_LOGIC;
+           end_counter  : out STD_LOGIC;
+           resetn       : in std_logic;
+           Din          : buffer std_logic_vector (27 downto 0));
 	end component;
 	
 	begin
-    uut : Counter_Unit
-    port map(clk => clk,
+    uut : Counter_Unit --connection des signaux utiliser entre le tp_fsm et counter_unit
+    port map(clk        => clk,
             end_counter => end_counter,
-            restart => restart,
-            Din => Din);
+            resetn      => resetn,
+            Din         => Din);
 	
 	
-		process(clk,restart)
+		FSM_reset : process(clk,resetn) --permet de faire fonctionner la FSM et de le remettre à 0 quand reset est à '1'
 		begin
-            if(restart='1') then
-                current_state <= state1;
+            if(resetn='1') then
                 current_color <= green;
 			elsif(rising_edge(clk)) then
-				current_state <= next_state;
 				current_color <= next_color;
 				end if;
 		end process; 
 
-        bouton :process(clk)
+        bouton :process(clk) --permet de gérer l'update
         begin
             if rising_edge(clk) then
                 if btn0 = '0' then
                     update <= '1';
-                elsif( btn0 = '1'  and end_counter = '1' and Din = max) then --and current_state = state1
+                elsif( btn0 = '1'  and end_counter = '1' and Din = max) then
                     update <= '0';
                 end if;
             end if;
-        end process;
+        end process;		
 		
-		-- FSM
---		FSM : process(current_state,next_state,end_counter,cnt,Din,update,btn0) --a completer avec vos signaux
---		begin
---		  next_state <= current_state;		
---           case current_state is
-
-				
---              when state1 =>
---                if (end_counter = '1' and Din = max and update = '1' and btn0 = '1' ) then 
---				    next_state <= state2; --prochain etat and test = '1'
---				    clr <= '1';
---				end if; 
-				      
---              when state2 =>
---                if (end_counter = '1' and Din = max ) then 
---				    next_state <= state1; --prochain etat
---				    clr <= '0';
---				end if;
-				
---			  when others =>
---			        next_state <= state1;
-
---              end case;
---		end process;
-		
+		--FSM
         color_fsm : process(current_color,next_color,color_code,clk)
         begin
         next_color <= current_color;
             case current_color is 
             
                 when green => 
-                    led_g <= end_counter;
-                    led_b <= '0';
-                    if (color_code = '0' and end_counter = '1' and Din = max and btn0 ='1') then -- and clr = '1' 
+                    led_g <= end_counter;   -- fait clignoter la led verte 
+                    led_b <= '0';           -- eteint la led bleu
+                    if (color_code = '0' and end_counter = '1' and Din = max and btn0 ='1') then 
                         next_color <= blue;
                     end if;
                 when blue =>
-                    led_b <= end_counter;
-                    led_g <= '0';
+                    led_b <= end_counter; -- fait clignoter la led bleu
+                    led_g <= '0'; -- eteint la led verte
                     if (color_code = '1' and end_counter = '1' and Din = max and btn0 ='1') then
                         next_color <= green;
                     end if;
                 when others => next_color <= green;
             
             end case;
---            if (rising_edge(clk)) then
---                if (color_code = '0' and clr = '0') then
---                    led_g <= led;
---                    led_b <= '0';
---                elsif (color_code = '1' and clr = '0') then
---                    led_b <= led;
---                    led_g <= '0';
---                end if; 
---            end if;       
-        end process;
-   
---with current_state select
---    led <= end_counter when state1,
---            '0' when others;
-            
+     
+        end process;       
   
 
 end behavioral;

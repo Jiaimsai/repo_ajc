@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Fri Jul 10 14:27:00 2026
-# Process ID: 26204
+# Start of session at: Thu Jul 16 14:36:17 2026
+# Process ID: 29568
 # Current directory: C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.runs/synth_1
 # Command line: vivado.exe -log FSM.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FSM.tcl
 # Log file: C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.runs/synth_1/FSM.vds
@@ -17,33 +17,33 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 16424
+INFO: [Synth 8-7075] Helper process launched with PID 6392
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1008.004 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1005.746 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'FSM' [C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.srcs/sources_1/new/FSM.vhd:17]
 	Parameter max bound to: 28'b0101111101011110000100000000 
-INFO: [Synth 8-3491] module 'Counter_Unit' declared at 'C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.srcs/sources_1/new/Counter_Unit.vhd:36' bound to instance 'uut' of component 'Counter_Unit' [C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.srcs/sources_1/new/FSM.vhd:43]
-INFO: [Synth 8-638] synthesizing module 'Counter_Unit' [C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.srcs/sources_1/new/Counter_Unit.vhd:49]
+INFO: [Synth 8-3491] module 'Counter_Unit' declared at 'C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.srcs/sources_1/new/Counter_Unit.vhd:7' bound to instance 'uut' of component 'Counter_Unit' [C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.srcs/sources_1/new/FSM.vhd:35]
+INFO: [Synth 8-638] synthesizing module 'Counter_Unit' [C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.srcs/sources_1/new/Counter_Unit.vhd:18]
 	Parameter max bound to: 28'b0101111101011110000100000000 
-INFO: [Synth 8-256] done synthesizing module 'Counter_Unit' (1#1) [C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.srcs/sources_1/new/Counter_Unit.vhd:49]
-WARNING: [Synth 8-614] signal 'end_counter' is read in the process but is not in the sensitivity list [C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.srcs/sources_1/new/FSM.vhd:97]
-WARNING: [Synth 8-614] signal 'Din' is read in the process but is not in the sensitivity list [C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.srcs/sources_1/new/FSM.vhd:97]
-WARNING: [Synth 8-614] signal 'btn0' is read in the process but is not in the sensitivity list [C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.srcs/sources_1/new/FSM.vhd:97]
+INFO: [Synth 8-256] done synthesizing module 'Counter_Unit' (1#1) [C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.srcs/sources_1/new/Counter_Unit.vhd:18]
+WARNING: [Synth 8-614] signal 'end_counter' is read in the process but is not in the sensitivity list [C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.srcs/sources_1/new/FSM.vhd:62]
+WARNING: [Synth 8-614] signal 'Din' is read in the process but is not in the sensitivity list [C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.srcs/sources_1/new/FSM.vhd:62]
+WARNING: [Synth 8-614] signal 'btn0' is read in the process but is not in the sensitivity list [C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.srcs/sources_1/new/FSM.vhd:62]
 INFO: [Synth 8-256] done synthesizing module 'FSM' (2#1) [C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.srcs/sources_1/new/FSM.vhd:17]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1008.004 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1005.746 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1008.004 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1005.746 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1008.004 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1005.746 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1008.004 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1005.746 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -54,29 +54,29 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/FSM_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1008.004 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1005.746 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1008.004 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1005.746 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1008.004 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1005.746 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1008.004 ; gain = 0.000
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1005.746 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1008.004 ; gain = 0.000
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1005.746 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'current_color_reg' in module 'FSM'
-WARNING: [Synth 8-327] inferring latch for variable 'led_g_reg' [C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.srcs/sources_1/new/FSM.vhd:103]
+WARNING: [Synth 8-327] inferring latch for variable 'led_g_reg' [C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.srcs/sources_1/new/FSM.vhd:68]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -85,9 +85,9 @@ WARNING: [Synth 8-327] inferring latch for variable 'led_g_reg' [C:/Users/33651/
                     blue |                               10 |                               10
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_color_reg' in module 'FSM'
-WARNING: [Synth 8-327] inferring latch for variable 'led_b_reg' [C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.srcs/sources_1/new/FSM.vhd:104]
+WARNING: [Synth 8-327] inferring latch for variable 'led_b_reg' [C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.srcs/sources_1/new/FSM.vhd:69]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1008.004 ; gain = 0.000
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1005.746 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -118,25 +118,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1008.004 ; gain = 0.000
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1005.746 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1008.004 ; gain = 0.000
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1005.746 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1018.934 ; gain = 10.930
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1019.930 ; gain = 14.184
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1019.758 ; gain = 11.754
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1020.738 ; gain = 14.992
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -154,37 +154,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1026.496 ; gain = 18.492
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1025.547 ; gain = 19.801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1026.496 ; gain = 18.492
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1025.547 ; gain = 19.801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1026.496 ; gain = 18.492
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1025.547 ; gain = 19.801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1026.496 ; gain = 18.492
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1025.547 ; gain = 19.801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1026.496 ; gain = 18.492
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1025.547 ; gain = 19.801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1026.496 ; gain = 18.492
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1025.547 ; gain = 19.801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -215,18 +215,18 @@ Report Cell Usage:
 |13    |OBUFT  |     1|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1026.496 ; gain = 18.492
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1025.547 ; gain = 19.801
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 1026.496 ; gain = 18.492
-Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1026.496 ; gain = 18.492
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1025.547 ; gain = 19.801
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1025.547 ; gain = 19.801
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1037.625 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1037.609 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1042.418 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1040.566 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   LD => LDCE: 2 instances
@@ -234,7 +234,7 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 22 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 1042.418 ; gain = 34.414
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1040.566 ; gain = 34.820
 INFO: [Common 17-1381] The checkpoint 'C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.runs/synth_1/FSM.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file FSM_utilization_synth.rpt -pb FSM_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jul 10 14:27:31 2026...
+INFO: [Common 17-206] Exiting Vivado at Thu Jul 16 14:36:55 2026...
