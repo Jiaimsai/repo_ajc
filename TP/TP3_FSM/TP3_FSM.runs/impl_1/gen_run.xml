@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1784193262">
+<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1784214521">
+  <File Type="OPT-HWDEF" Name="tp_fsm.hwdef"/>
+  <File Type="ROUTE-BUS-SKEW" Name="tp_fsm_bus_skew_routed.rpt"/>
+  <File Type="PA-DCP" Name="tp_fsm.dcp"/>
   <File Type="BITSTR-BMM" Name="tp_fsm_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="tp_fsm_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="tp_fsm_timing_summary_init.rpt"/>
@@ -10,7 +13,6 @@
   <File Type="ROUTE-PWR-SUM" Name="tp_fsm_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="tp_fsm_reports.tcl"/>
   <File Type="OPT-DRC" Name="tp_fsm_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="tp_fsm.hwdef"/>
   <File Type="PWROPT-DCP" Name="tp_fsm_pwropt.dcp"/>
   <File Type="PWROPT-DRC" Name="tp_fsm_drc_pwropted.rpt"/>
   <File Type="PWROPT-TIMING" Name="tp_fsm_timing_summary_pwropted.rpt"/>
@@ -48,7 +50,6 @@
   <File Type="ROUTE-TIMING-RPX" Name="tp_fsm_timing_summary_routed.rpx"/>
   <File Type="ROUTE-SIMILARITY" Name="tp_fsm_incremental_reuse_routed.rpt"/>
   <File Type="ROUTE-CLK" Name="tp_fsm_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="tp_fsm_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="tp_fsm_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="tp_fsm_bus_skew_routed.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="tp_fsm_postroute_physopt.dcp"/>
