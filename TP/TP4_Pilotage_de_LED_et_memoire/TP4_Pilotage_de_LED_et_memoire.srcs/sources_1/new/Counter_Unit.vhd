@@ -6,7 +6,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity Counter_Unit is
     generic (
-    max : std_logic_vector := x"5F5E100"
+    max : std_logic_vector := x"007A120"
     );
     Port ( clk          : in STD_LOGIC;
            end_counter  : out STD_LOGIC;

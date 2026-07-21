@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Jul 16 14:22:30 2026
+# Process ID: 14840
+# Current directory: C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16024 C:\Users\33651\Desktop\projet_ajc\TP4_Pilotage_de_LED_et_memoire\TP4_Pilotage_de_LED_et_memoire.xpr
+# Log file: C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/vivado.log
+# Journal file: C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.xpr
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/vivado_2020.2/Vivado/2020.2/data/ip'.
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+[Thu Jul 16 14:36:14 2026] Launched synth_1...
+Run output will be captured here: C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 8
+[Thu Jul 16 14:50:30 2026] Launched impl_1...
+Run output will be captured here: C:/Users/33651/Desktop/projet_ajc/TP4_Pilotage_de_LED_et_memoire/TP4_Pilotage_de_LED_et_memoire.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Jul 16 15:11:47 2026...

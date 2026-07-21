@@ -5,7 +5,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity FSM is
     generic (
-        max : std_logic_vector := x"5F5E100"--BEBC200 007A120 5F5E100
+        max : std_logic_vector := x"007A120"--BEBC200 007A120 5F5E100
     );
     port ( 
 		clk			      : in std_logic; --horloge
