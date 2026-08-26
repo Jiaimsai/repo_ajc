@@ -2,34 +2,13 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Fri Aug  7 09:36:09 2026
-# Process ID: 27624
-# Current directory: C:/Users/33651/Desktop/projet_ajc/TP4_pilotage_de_LED_et_memoire_partie_2 - Copie
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent26044 C:\Users\33651\Desktop\projet_ajc\TP4_pilotage_de_LED_et_memoire_partie_2 - Copie\TP4_pilotage_de_LED_et_memoire_partie_2.xpr
-# Log file: C:/Users/33651/Desktop/projet_ajc/TP4_pilotage_de_LED_et_memoire_partie_2 - Copie/vivado.log
-# Journal file: C:/Users/33651/Desktop/projet_ajc/TP4_pilotage_de_LED_et_memoire_partie_2 - Copie\vivado.jou
+# Start of session at: Tue Aug 25 14:05:18 2026
+# Process ID: 2552
+# Current directory: C:/Users/33651/Desktop/test_ajc/TP/TP4_pilotage_de_LED_et_memoire_partie_2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10300 C:\Users\33651\Desktop\test_ajc\TP\TP4_pilotage_de_LED_et_memoire_partie_2\TP4_pilotage_de_LED_et_memoire_partie_2.xpr
+# Log file: C:/Users/33651/Desktop/test_ajc/TP/TP4_pilotage_de_LED_et_memoire_partie_2/vivado.log
+# Journal file: C:/Users/33651/Desktop/test_ajc/TP/TP4_pilotage_de_LED_et_memoire_partie_2\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project {C:/Users/33651/Desktop/projet_ajc/TP4_pilotage_de_LED_et_memoire_partie_2 - Copie/TP4_pilotage_de_LED_et_memoire_partie_2.xpr}
+open_project C:/Users/33651/Desktop/test_ajc/TP/TP4_pilotage_de_LED_et_memoire_partie_2/TP4_pilotage_de_LED_et_memoire_partie_2.xpr
 update_compile_order -fileset sources_1
-launch_simulation
-source testbench.tcl
-run all
-restart
-run all
-close_sim
-launch_simulation
-source testbench.tcl
-run all
-close_sim
-launch_simulation
-source testbench.tcl
-run all
-close_sim
-launch_simulation
-source testbench.tcl
-run all
-close_sim
-launch_simulation
-source testbench.tcl
-run all
