@@ -1,0 +1,285 @@
+/*
+#include "xil_io.h"
+#include "xil_cache.h"
+#include "sleep.h"
+
+#define VDMA_BASE_ADDR       0x43000000U
+#define FRAMEBUFFER_ADDR     0x01000000U
+
+#define WIDTH                640
+#define HEIGHT               480
+#define BYTES_PER_PIXEL      3
+#define STRIDE               (WIDTH * BYTES_PER_PIXEL)
+#define FRAME_SIZE           (STRIDE * HEIGHT)
+
+#define MM2S_DMACR           0x00
+#define MM2S_DMASR           0x04
+#define MM2S_VSIZE           0x50
+#define MM2S_HSIZE           0x54
+#define MM2S_FRMDLY_STRIDE   0x58
+#define MM2S_START_ADDR1     0x5C
+
+#define GENERATE_TEST_PATTERN 1
+
+static void generate_test_pattern(void)
+{
+	u8 *fb = (u8 *)FRAMEBUFFER_ADDR;
+
+	    for (int y = 0; y < HEIGHT; y++)
+	    {
+	        for (int x = 0; x < WIDTH; x++)
+	        {
+	            u8 r = 0;
+	            u8 g = 0;
+	            u8 b = 0;
+
+	            if (x < 106)
+	            {
+	                r = 255;
+	                g = 0;
+	                b = 0;
+	            }
+	            else if (x < 212)
+	            {
+	                r = 0;
+	                g = 255;
+	                b = 0;
+	            }
+	            else if (x < 318)
+	            {
+	                r = 0;
+	                g = 0;
+	                b = 255;
+	            }
+	            else if (x < 424)
+	            {
+	                r = 0;
+	                g = 255;
+	                b = 255;
+	            }
+	            else if (x < 530)
+	            {
+	                r = 255;
+	                g = 0;
+	                b = 255;
+	            }
+	            else
+	            {
+	                r = 255;
+	                g = 255;
+	                b = 0;
+	            }
+
+	            *fb++ = r;
+	            *fb++ = g;
+	            *fb++ = b;
+	        }
+	    }
+
+	    Xil_DCacheFlushRange(FRAMEBUFFER_ADDR, WIDTH * HEIGHT * 3);
+	}
+static void reset_vdma(void)
+{
+    Xil_Out32(VDMA_BASE_ADDR + MM2S_DMACR, 0x00000004);
+
+    while (Xil_In32(VDMA_BASE_ADDR + MM2S_DMACR) & 0x00000004)
+    {
+    }
+}
+
+static void start_vdma(void)
+{
+    reset_vdma();
+
+    Xil_Out32(VDMA_BASE_ADDR + MM2S_DMACR, 0x00000001);
+
+    Xil_Out32(
+        VDMA_BASE_ADDR + MM2S_START_ADDR1,
+        FRAMEBUFFER_ADDR
+    );
+
+    Xil_Out32(
+        VDMA_BASE_ADDR + MM2S_FRMDLY_STRIDE,
+        STRIDE
+    );
+
+    Xil_Out32(
+        VDMA_BASE_ADDR + MM2S_HSIZE,
+        STRIDE
+    );
+
+    Xil_Out32(
+        VDMA_BASE_ADDR + MM2S_VSIZE,
+        HEIGHT
+    );
+
+    usleep(100000);
+}
+
+int main()
+{
+#if GENERATE_TEST_PATTERN
+    generate_test_pattern();
+#endif
+
+    start_vdma();
+
+    while (1)
+    {
+    }
+
+    return 0;
+}
+*/
+#include "xparameters.h"
+#include "xil_io.h"
+
+#define VDMA_BASE_ADDR       0x43000000U
+#define FRAMEBUFFER_ADDR     0x01000000U
+
+#define WIDTH                640
+#define HEIGHT               480
+#define STRIDE               1920
+
+#define MM2S_DMACR           0x00
+#define MM2S_DMASR           0x04
+#define MM2S_VSIZE           0x50
+#define MM2S_HSIZE           0x54
+#define MM2S_STRIDE          0x58
+#define MM2S_START_ADDR      0x5C
+
+#define TPG_BASE             XPAR_V_TPG_0_S_AXI_CTRL_BASEADDR
+
+#define TPG_CONTROL          0x0000
+#define TPG_HEIGHT           0x0010
+#define TPG_WIDTH            0x0018
+#define TPG_PATTERN          0x0020
+#define TPG_OVERLAY          0x0028
+#define TPG_MASK             0x0030
+#define TPG_COLOR_FORMAT     0x0040
+
+#define TPG_ENABLE_INPUT     0x0098
+
+#define TPG_PASS_LEFT        0x00A0
+#define TPG_PASS_RIGHT       0x00A8
+#define TPG_PASS_TOP         0x00B0
+#define TPG_PASS_BOTTOM      0x00B8
+
+
+static void vdma_start()
+{
+    Xil_Out32(VDMA_BASE_ADDR + MM2S_DMACR, 0x00000004);
+
+    while (Xil_In32(VDMA_BASE_ADDR + MM2S_DMACR) & 0x4)
+    {
+    }
+
+    Xil_Out32(VDMA_BASE_ADDR + MM2S_DMACR, 0x00010001);
+
+    Xil_Out32(
+        VDMA_BASE_ADDR + MM2S_START_ADDR,
+        FRAMEBUFFER_ADDR
+    );
+
+    Xil_Out32(
+        VDMA_BASE_ADDR + MM2S_STRIDE,
+        STRIDE
+    );
+
+    Xil_Out32(
+        VDMA_BASE_ADDR + MM2S_HSIZE,
+        STRIDE
+    );
+
+    Xil_Out32(
+        VDMA_BASE_ADDR + MM2S_VSIZE,
+        HEIGHT
+    );
+}
+
+
+static void tpg_common()
+{
+    Xil_Out32(TPG_BASE + TPG_HEIGHT, HEIGHT);
+    Xil_Out32(TPG_BASE + TPG_WIDTH, WIDTH);
+
+    Xil_Out32(TPG_BASE + TPG_COLOR_FORMAT, 0);
+
+    Xil_Out32(TPG_BASE + TPG_OVERLAY, 0);
+    Xil_Out32(TPG_BASE + TPG_MASK, 0);
+}
+
+
+static void tpg_mode()
+{
+    Xil_Out32(TPG_BASE + TPG_CONTROL, 0);
+
+    tpg_common();
+
+    Xil_Out32(
+        TPG_BASE + TPG_ENABLE_INPUT,
+        0
+    );
+
+    Xil_Out32(
+        TPG_BASE + TPG_PATTERN,
+        9
+    );
+
+    Xil_Out32(
+        TPG_BASE + TPG_CONTROL,
+        0x81
+    );
+}
+
+
+static void image_mode()
+{
+    Xil_Out32(TPG_BASE + TPG_CONTROL, 0);
+
+    tpg_common();
+
+    Xil_Out32(
+        TPG_BASE + TPG_ENABLE_INPUT,
+        1
+    );
+
+    Xil_Out32(
+        TPG_BASE + TPG_PASS_LEFT,
+        0
+    );
+
+    Xil_Out32(
+        TPG_BASE + TPG_PASS_RIGHT,
+        WIDTH
+    );
+
+    Xil_Out32(
+        TPG_BASE + TPG_PASS_TOP,
+        0
+    );
+
+    Xil_Out32(
+        TPG_BASE + TPG_PASS_BOTTOM,
+        HEIGHT
+    );
+
+    Xil_Out32(
+        TPG_BASE + TPG_CONTROL,
+        0x81
+    );
+}
+
+
+int main()
+{
+    vdma_start();
+
+    tpg_mode();
+//image_mode();
+    while (1)
+    {
+    }
+
+    return 0;
+}

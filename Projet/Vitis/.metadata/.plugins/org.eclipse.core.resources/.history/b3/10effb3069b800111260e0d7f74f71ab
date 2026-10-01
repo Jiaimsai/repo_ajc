@@ -1,0 +1,12 @@
+#include "ps7_init.h"
+
+int main(void)
+{
+    ps7_init();
+    ps7_post_config();
+
+    while (1) {
+    }
+
+    return 0;
+}

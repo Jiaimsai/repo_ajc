@@ -1,0 +1,87 @@
+#include "xparameters.h"
+#include "xaxivdma.h"
+#include "xil_cache.h"
+#include "xil_printf.h"
+#include "xstatus.h"
+
+#include "ps7_init.h"
+
+volatile int Status_Config;
+volatile int Status_Buffer;
+volatile int Status_Start;
+volatile u32 Vdma_Status;
+
+
+#define WIDTH           640
+#define HEIGHT          480
+#define BYTES_PER_PIXEL 3
+
+#define HSIZE           (WIDTH * BYTES_PER_PIXEL)
+#define FRAME_SIZE      (HSIZE * HEIGHT)
+
+
+#define FRAME_ADDR      0x10000000U
+
+#define VDMA_DEVICE_ID  XPAR_AXIVDMA_0_DEVICE_ID
+
+XAxiVdma Vdma;
+
+
+int main(void)
+{
+    ps7_init();
+    ps7_post_config();
+
+    // Configuration VDMA
+    XAxiVdma_Config *Config;
+
+    Config = XAxiVdma_LookupConfig(XPAR_AXIVDMA_0_DEVICE_ID);
+
+    Status_Config = XAxiVdma_CfgInitialize(&Vdma, Config, Config->BaseAddress);
+
+    // Configuration MM2S
+    XAxiVdma_DmaSetup DmaSetup;
+
+    DmaSetup.VertSizeInput = 480;
+    DmaSetup.HoriSizeInput = 1920;
+    DmaSetup.Stride = 1920;
+    DmaSetup.FrameDelay = 0;
+    DmaSetup.EnableCircularBuf = 1;
+    DmaSetup.EnableSync = 0;
+    DmaSetup.PointNum = 0;
+    DmaSetup.EnableFrameCounter = 0;
+    DmaSetup.FixedFrameStoreAddr = 0;
+
+    Status_Config = XAxiVdma_DmaConfig(
+        &Vdma,
+        XAXIVDMA_READ,
+        &DmaSetup
+    );
+
+    // Adresse framebuffer
+    UINTPTR FrameAddr[1];
+    FrameAddr[0] = 0x10000000U;
+
+    Status_Buffer = XAxiVdma_DmaSetBufferAddr(
+        &Vdma,
+        XAXIVDMA_READ,
+        FrameAddr
+    );
+
+    // Démarrage
+    Status_Start = XAxiVdma_DmaStart(
+        &Vdma,
+        XAXIVDMA_READ
+    );
+
+    // Lire le registre STATUS
+    Vdma_Status = XAxiVdma_GetStatus(
+        &Vdma,
+        XAXIVDMA_READ
+    );
+
+    while (1) {
+    }
+
+    return 0;
+}

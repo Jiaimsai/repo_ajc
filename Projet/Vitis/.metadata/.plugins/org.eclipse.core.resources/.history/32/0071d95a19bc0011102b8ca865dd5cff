@@ -1,0 +1,205 @@
+/*
+#include "xparameters.h"
+#include "xaxivdma.h"
+#include "xil_cache.h"
+#include "xil_printf.h"
+#include "xstatus.h"
+
+#include "ps7_init.h"
+
+volatile int Status_Config = -1;
+volatile int Status_Buffer = -1;
+volatile int Status_Start = -1;
+volatile unsigned int Vdma_Status = 0;
+
+
+#define WIDTH           640
+#define HEIGHT          480
+#define BYTES_PER_PIXEL 3
+
+#define HSIZE           (WIDTH * BYTES_PER_PIXEL)
+#define FRAME_SIZE      (HSIZE * HEIGHT)
+
+
+#define FRAME_ADDR      0x10000000U
+
+#define VDMA_DEVICE_ID  XPAR_AXIVDMA_0_DEVICE_ID
+
+XAxiVdma Vdma;
+
+
+int main(void)
+{
+    ps7_init();
+    ps7_post_config();
+
+    // Configuration VDMA
+    XAxiVdma_Config *Config;
+
+    Config = XAxiVdma_LookupConfig(XPAR_AXIVDMA_0_DEVICE_ID);
+
+    Status_Config = XAxiVdma_CfgInitialize(&Vdma, Config, Config->BaseAddress);
+
+    // Configuration MM2S
+    XAxiVdma_DmaSetup DmaSetup;
+
+    DmaSetup.VertSizeInput = 480;
+    DmaSetup.HoriSizeInput = 1920;
+    DmaSetup.Stride = 1920;
+    DmaSetup.FrameDelay = 0;
+    DmaSetup.EnableCircularBuf = 1;
+    DmaSetup.EnableSync = 0;
+    DmaSetup.PointNum = 0;
+    DmaSetup.EnableFrameCounter = 0;
+    DmaSetup.FixedFrameStoreAddr = 0;
+
+    Status_Config = XAxiVdma_DmaConfig(
+        &Vdma,
+        XAXIVDMA_READ,
+        &DmaSetup
+    );
+
+    // Adresse framebuffer
+    UINTPTR FrameAddr[1];
+    FrameAddr[0] = 0x10000000U;
+
+    Status_Buffer = XAxiVdma_DmaSetBufferAddr(
+        &Vdma,
+        XAXIVDMA_READ,
+        FrameAddr
+    );
+
+    // Démarrage
+    Status_Start = XAxiVdma_DmaStart(
+        &Vdma,
+        XAXIVDMA_READ
+    );
+
+    // Lire le registre STATUS
+    Vdma_Status = XAxiVdma_GetStatus(
+        &Vdma,
+        XAXIVDMA_READ
+    );
+
+    while (1) {
+    }
+
+    return 0;
+}
+*/
+
+#include "xil_io.h"
+#include "xil_cache.h"
+#include "sleep.h"
+
+#define VDMA_BASE_ADDR       0x43000000U
+#define FRAMEBUFFER_ADDR     0x01000000U
+
+#define WIDTH                640
+#define HEIGHT               480
+#define BYTES_PER_PIXEL      3
+#define STRIDE               (WIDTH * BYTES_PER_PIXEL)
+#define FRAME_SIZE           (STRIDE * HEIGHT)
+
+#define MM2S_DMACR           0x00
+#define MM2S_DMASR           0x04
+#define MM2S_VSIZE           0x50
+#define MM2S_HSIZE           0x54
+#define MM2S_FRMDLY_STRIDE   0x58
+#define MM2S_START_ADDR1     0x5C
+
+#define GENERATE_TEST_PATTERN 0
+
+static void generate_test_pattern(void)
+{
+    u8 *fb = (u8 *)FRAMEBUFFER_ADDR;
+
+    for (int y = 0; y < HEIGHT; y++)
+    {
+        for (int x = 0; x < WIDTH; x++)
+        {
+            u8 r = 0;
+            u8 g = 0;
+            u8 b = 0;
+
+            if (x < 160)
+            {
+                r = 255;
+            }
+            else if (x < 320)
+            {
+                g = 255;
+            }
+            else if (x < 480)
+            {
+                b = 255;
+            }
+            else
+            {
+                r = 255;
+                g = 255;
+                b = 255;
+            }
+
+            *fb++ = r;
+            *fb++ = g;
+            *fb++ = b;
+        }
+    }
+
+    Xil_DCacheFlushRange(FRAMEBUFFER_ADDR, FRAME_SIZE);
+}
+
+static void reset_vdma(void)
+{
+    Xil_Out32(VDMA_BASE_ADDR + MM2S_DMACR, 0x00000004);
+
+    while (Xil_In32(VDMA_BASE_ADDR + MM2S_DMACR) & 0x00000004)
+    {
+    }
+}
+
+static void start_vdma(void)
+{
+    reset_vdma();
+
+    Xil_Out32(VDMA_BASE_ADDR + MM2S_DMACR, 0x00000001);
+
+    Xil_Out32(
+        VDMA_BASE_ADDR + MM2S_START_ADDR1,
+        FRAMEBUFFER_ADDR
+    );
+
+    Xil_Out32(
+        VDMA_BASE_ADDR + MM2S_FRMDLY_STRIDE,
+        STRIDE
+    );
+
+    Xil_Out32(
+        VDMA_BASE_ADDR + MM2S_HSIZE,
+        STRIDE
+    );
+
+    Xil_Out32(
+        VDMA_BASE_ADDR + MM2S_VSIZE,
+        HEIGHT
+    );
+
+    usleep(100000);
+}
+
+int main()
+{
+#if GENERATE_TEST_PATTERN
+    generate_test_pattern();
+#endif
+
+    start_vdma();
+
+    while (1)
+    {
+    }
+
+    return 0;
+}
+

@@ -1,0 +1,191 @@
+#include "xparameters.h"
+#include "xaxivdma.h"
+#include "xil_cache.h"
+#include "xil_printf.h"
+#include "xstatus.h"
+
+#include "ps7_init.h"
+
+
+
+
+#define WIDTH           640
+#define HEIGHT          480
+#define BYTES_PER_PIXEL 3
+
+#define HSIZE           (WIDTH * BYTES_PER_PIXEL)
+#define FRAME_SIZE      (HSIZE * HEIGHT)
+
+
+#define FRAME_ADDR      0x10000000U
+
+#define VDMA_DEVICE_ID  XPAR_AXIVDMA_0_DEVICE_ID
+
+XAxiVdma Vdma;
+
+
+int main(void)
+{
+    int Status;
+
+    XAxiVdma_Config *Config;
+    XAxiVdma_DmaSetup ReadCfg;
+
+
+    UINTPTR FrameAddr[1];
+
+    xil_printf("\r\n");
+    xil_printf("=====================================\r\n");
+    xil_printf("   VDMA RGB888 640x480 TEST\r\n");
+    xil_printf("=====================================\r\n");
+
+
+
+    xil_printf("Initializing PS7...\r\n");
+    Status = ps7_init();
+    if (Status != PS7_INIT_SUCCESS)
+    {
+        xil_printf("ERROR: ps7_init() failed\r\n");
+        return -1;
+    }
+    ps7_post_config();
+    xil_printf("PS7 initialized\r\n");
+
+
+
+    FrameAddr[0] = (UINTPTR)FRAME_ADDR;
+    xil_printf("Framebuffer address = 0x%08lx\r\n",
+               (unsigned long)FrameAddr[0]);
+    xil_printf("Writing test image to DDR...\r\n");
+
+    u8 *Frame = reinterpret_cast<u8 *>(FRAME_ADDR);
+
+
+    for (int y = 0; y < HEIGHT; y++)
+    {
+        for (int x = 0; x < WIDTH; x++)
+        {
+            int index = (y * WIDTH + x) * BYTES_PER_PIXEL;
+
+            Frame[index + 0] = 0xFF;   // R
+            Frame[index + 1] = 0x00;   // G
+            Frame[index + 2] = 0x00;   // B
+        }
+    }
+
+
+    Xil_DCacheFlushRange(
+        (UINTPTR)Frame,
+        FRAME_SIZE
+    );
+
+    xil_printf("Image written to DDR\r\n");
+
+
+
+    xil_printf("Looking for VDMA...\r\n");
+
+    Config = XAxiVdma_LookupConfig(VDMA_DEVICE_ID);
+
+    if (Config == NULL)
+    {
+        xil_printf("ERROR: VDMA config not found\r\n");
+        return -1;
+    }
+
+    xil_printf("VDMA config found\r\n");
+
+
+
+    Status = XAxiVdma_CfgInitialize(
+        &Vdma,
+        Config,
+        Config->BaseAddress
+    );
+
+    if (Status != XST_SUCCESS)
+    {
+        xil_printf(
+            "ERROR: VDMA initialization failed\r\n"
+        );
+
+        return -1;
+    }
+
+    xil_printf("VDMA initialized\r\n");
+
+    ReadCfg.VertSizeInput = HEIGHT;
+    ReadCfg.HoriSizeInput = HSIZE;
+    ReadCfg.Stride = HSIZE;
+    ReadCfg.FrameDelay = 0;
+    ReadCfg.EnableCircularBuf = 1;
+    ReadCfg.EnableSync = 0;
+    ReadCfg.PointNum = 0;
+    ReadCfg.EnableFrameCounter = 0;
+    ReadCfg.FixedFrameStoreAddr = 0;
+    xil_printf("Configuring MM2S...\r\n");
+
+    Status = XAxiVdma_DmaConfig(
+        &Vdma,
+        XAXIVDMA_READ,
+        &ReadCfg
+    );
+
+    if (Status != XST_SUCCESS)
+    {
+        xil_printf(
+            "ERROR: VDMA MM2S configuration failed\r\n"
+        );
+
+        return -1;
+    }
+
+    xil_printf("MM2S configured\r\n");
+
+
+    xil_printf("Setting framebuffer address...\r\n");
+
+    Status = XAxiVdma_DmaSetBufferAddr(
+        &Vdma,
+        XAXIVDMA_READ,
+        FrameAddr
+    );
+
+    if (Status != XST_SUCCESS)
+    {
+        xil_printf(
+            "ERROR: framebuffer address configuration failed\r\n"
+        );
+
+        return -1;
+    }
+
+    xil_printf("Framebuffer address configured\r\n");
+
+
+
+    xil_printf("Starting VDMA MM2S...\r\n");
+
+    Status = XAxiVdma_DmaStart(
+        &Vdma,
+        XAXIVDMA_READ
+    );
+
+    if (Status != XST_SUCCESS)
+    {
+        xil_printf(
+            "ERROR: VDMA MM2S start failed\r\n"
+        );
+
+        return -1;
+    }
+
+    xil_printf("VDMA MM2S STARTED!\r\n");
+
+
+    while (1)
+    {}
+
+
+    return 0;
+}

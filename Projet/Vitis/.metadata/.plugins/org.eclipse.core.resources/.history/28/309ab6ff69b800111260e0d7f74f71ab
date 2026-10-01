@@ -1,0 +1,112 @@
+#include "ps7_init.h"
+#include "xaxivdma.h"
+#include "xil_cache.h"
+#include "xil_printf.h"
+
+#define VDMA_DEVICE_ID  XPAR_AXIVDMA_0_DEVICE_ID
+
+
+
+
+#define WIDTH           640
+#define HEIGHT          480
+#define BYTES_PER_PIXEL 3
+
+#define HSIZE           (WIDTH * BYTES_PER_PIXEL)   // 1920
+#define FRAME_SIZE      (HSIZE * HEIGHT)             // 921600
+
+XAxiVdma Vdma;
+
+int main(void)
+{
+    int Status;
+    XAxiVdma_Config *Config;
+    XAxiVdma_DmaSetup ReadCfg;
+
+    ps7_init();
+    ps7_post_config();
+
+    xil_printf("Starting VDMA...\r\n");
+
+    Config = XAxiVdma_LookupConfig(VDMA_DEVICE_ID);
+
+    if (Config == NULL) {
+        xil_printf("VDMA config error\r\n");
+        return -1;
+    }
+
+    Status = XAxiVdma_CfgInitialize(&Vdma, Config, Config->BaseAddress);
+
+    if (Status != XST_SUCCESS) {
+        xil_printf("VDMA init error\r\n");
+        return -1;
+    }
+
+    /*
+     * Configuration MM2S / READ
+     */
+    ReadCfg.VertSizeInput = HEIGHT;
+    ReadCfg.HoriSizeInput = HSIZE;
+    ReadCfg.Stride = HSIZE;
+
+    ReadCfg.FrameDelay = 0;
+    ReadCfg.EnableCircularBuf = 1;
+    ReadCfg.EnableSync = 0;
+    ReadCfg.PointNum = 0;
+    ReadCfg.EnableFrameCounter = 0;
+    ReadCfg.FixedFrameStoreAddr = 0;
+
+    Status = XAxiVdma_DmaConfig(
+        &Vdma,
+        XAXIVDMA_READ,
+        &ReadCfg
+    );
+
+    if (Status != XST_SUCCESS) {
+        xil_printf("VDMA config error\r\n");
+        return -1;
+    }
+
+    /*
+     * Adresse du framebuffer
+     */
+    Status = XAxiVdma_DmaSetBufferAddr(
+        &Vdma,
+        XAXIVDMA_READ,
+        FRAME_ADDR
+    );
+
+    if (Status != XST_SUCCESS) {
+        xil_printf("VDMA buffer error\r\n");
+        return -1;
+    }
+
+    /*
+     * Démarrage MM2S
+     */
+
+    UINTPTR FrameAddr[3];
+
+
+    FrameAddr[0] = FRAME0_ADDR;
+    FrameAddr[1] = FRAME1_ADDR;
+    FrameAddr[2] = FRAME2_ADDR;
+
+    Status = XAxiVdma_DmaSetBufferAddr(
+        &Vdma,
+        XAXIVDMA_READ,
+        FrameAddr
+    );
+
+    if (Status != XST_SUCCESS) {
+        xil_printf("VDMA start error\r\n");
+        return -1;
+    }
+
+    xil_printf("VDMA started!\r\n");
+
+    while (1) {
+    }
+
+    return 0;
+}
