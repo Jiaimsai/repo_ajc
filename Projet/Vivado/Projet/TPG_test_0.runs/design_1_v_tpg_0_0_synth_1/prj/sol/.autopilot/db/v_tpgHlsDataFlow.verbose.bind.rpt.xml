@@ -1,0 +1,50 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'v_tpgHlsDataFlow'" level="0">
+<item name = "Date">Wed Sep 30 10:15:33 2026
+</item>
+<item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
+<item name = "Project">prj</item>
+<item name = "Solution">sol (Vivado IP Flow Target)</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z010-clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">39.68 ns, 26.440 ns, 10.71 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">12, 4295753717, 0.476 us, 170.468 sec, 3, 4295753717, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_AXIvideo2MultiPixStream_fu_642">AXIvideo2MultiPixStream, 2, 312006, 79.366 ns, 12.381 ms, 2, 312006, no</column>
+<column name="call_ln0_entry_proc_fu_673">entry_proc, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
+<column name="grp_tpgBackground_fu_743">tpgBackground, 1, 4295753716, 39.683 ns, 170.468 sec, 1, 4295753716, no</column>
+<column name="grp_tpgForeground_fu_885">tpgForeground, 1, 4295163901, 39.683 ns, 170.445 sec, 1, 4295163901, no</column>
+<column name="grp_MultiPixStream2AXIvideo_fu_916">MultiPixStream2AXIvideo, 1, 310081, 39.683 ns, 12.305 ms, 1, 310081, no</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

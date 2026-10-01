@@ -1,0 +1,17 @@
+vhdl xil_defaultlib  \
+"../../../bd/design_1/ip/design_1_proc_sys_reset_0_0/sim/design_1_proc_sys_reset_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_v_tc_0_0/sim/design_1_v_tc_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_axi_vdma_0_1/sim/design_1_axi_vdma_0_1.vhd" \
+"../../../bd/design_1/ipshared/8cae/src/rgb2gray.vhd" \
+"../../../bd/design_1/ip/design_1_axis_rgb2gray_0_0/sim/design_1_axis_rgb2gray_0_0.vhd" \
+"../../../bd/design_1/ipshared/555d/src/gauss.vhd" \
+"../../../bd/design_1/ip/design_1_axis_gaussian_0_0/sim/design_1_axis_gaussian_0_0.vhd" \
+"../../../bd/design_1/ipshared/a74b/src/Harris.vhd" \
+"../../../bd/design_1/ip/design_1_axis_harris_0_0/sim/design_1_axis_harris_0_0.vhd" \
+"../../../bd/design_1/ipshared/ece9/src/overlay.vhd" \
+"../../../bd/design_1/ip/design_1_axis_overlay_0_0/sim/design_1_axis_overlay_0_0.vhd" \
+"../../../bd/design_1/ipshared/d0d5/src/delay_rgb.vhd" \
+"../../../bd/design_1/ip/design_1_axis_rgb_delay_0_0/sim/design_1_axis_rgb_delay_0_0.vhd" \
+
+# Do not sort compile order
+nosort

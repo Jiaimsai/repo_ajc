@@ -1,0 +1,30 @@
+
+*** Running vivado
+    with args -log design_1_util_vector_logic_2_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_util_vector_logic_2_1.tcl
+
+
+Commande ECHO d‚sactiv‚e.
+Commande ECHO d‚sactiv‚e.
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source design_1_util_vector_logic_2_1.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 478.383 ; gain = 182.477
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/33651/Desktop/projet_ajc/Projet'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.2/data/ip'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:axi4s_driver:1.0'. The one found in IP location 'c:/Users/33651/Desktop/projet_ajc/Projet/TestPatterns/TestPatterns' will take precedence over the same IP in location c:/Users/33651/Desktop/projet_ajc/Projet/projet_TPG
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_util_vector_logic_2_1
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry e63816632b829f78 to dir: C:/vp/T0/TPG_test_0.runs/design_1_util_vector_logic_2_1_synth_1
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/vp/T0/TPG_test_0.cache/ip/2023.2/e/6/e63816632b829f78/design_1_util_vector_logic_2_0.dcp to C:/vp/T0/TPG_test_0.runs/design_1_util_vector_logic_2_1_synth_1/design_1_util_vector_logic_2_1.dcp.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/vp/T0/TPG_test_0.cache/ip/2023.2/e/6/e63816632b829f78/design_1_util_vector_logic_2_0_sim_netlist.v to C:/vp/T0/TPG_test_0.runs/design_1_util_vector_logic_2_1_synth_1/design_1_util_vector_logic_2_1_sim_netlist.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/vp/T0/TPG_test_0.cache/ip/2023.2/e/6/e63816632b829f78/design_1_util_vector_logic_2_0_sim_netlist.vhdl to C:/vp/T0/TPG_test_0.runs/design_1_util_vector_logic_2_1_synth_1/design_1_util_vector_logic_2_1_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/vp/T0/TPG_test_0.cache/ip/2023.2/e/6/e63816632b829f78/design_1_util_vector_logic_2_0_stub.v to C:/vp/T0/TPG_test_0.runs/design_1_util_vector_logic_2_1_synth_1/design_1_util_vector_logic_2_1_stub.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/vp/T0/TPG_test_0.cache/ip/2023.2/e/6/e63816632b829f78/design_1_util_vector_logic_2_0_stub.vhdl to C:/vp/T0/TPG_test_0.runs/design_1_util_vector_logic_2_1_synth_1/design_1_util_vector_logic_2_1_stub.vhdl.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP design_1_util_vector_logic_2_1, cache-ID = e63816632b829f78.
+INFO: [Common 17-206] Exiting Vivado at Tue Sep 29 23:43:26 2026...

@@ -1,0 +1,876 @@
+
+*** Running vivado
+    with args -log design_1_axis_harris_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_axis_harris_0_0.tcl
+
+
+Commande ECHO d‚sactiv‚e.
+Commande ECHO d‚sactiv‚e.
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source design_1_axis_harris_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 479.137 ; gain = 182.086
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/33651/Desktop/projet_ajc/Projet'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/33651/AppData/Roaming/Xilinx/ip_repo'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/33651/AppData/Roaming/Xilinx/ip_repo_2'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/33651/AppData/Roaming/Xilinx/ip_repo_3'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/33651/AppData/Roaming/Xilinx/ip_repo_4'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.2/data/ip'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:axi4s_driver:1.0'. The one found in IP location 'c:/Users/33651/Desktop/projet_ajc/Projet/TestPatterns/TestPatterns' will take precedence over the same IP in location c:/Users/33651/Desktop/projet_ajc/Projet/projet_TPG
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_axis_harris_0_0
+Command: synth_design -top design_1_axis_harris_0_0 -part xc7z010clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 2852
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1324.488 ; gain = 440.141
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_axis_harris_0_0' [c:/vp/T1/TPG_test_0.gen/sources_1/bd/design_1/ip/design_1_axis_harris_0_0/synth/design_1_axis_harris_0_0.vhd:73]
+	Parameter IMAGE_WIDTH bound to: 640 - type: integer 
+	Parameter IMAGE_HEIGHT bound to: 480 - type: integer 
+	Parameter HARRIS_THRESHOLD bound to: 50000 - type: integer 
+INFO: [Synth 8-3491] module 'axis_harris_3x3' declared at 'c:/vp/T1/TPG_test_0.gen/sources_1/bd/design_1/ipshared/a74b/src/Harris.vhd:5' bound to instance 'U0' of component 'axis_harris_3x3' [c:/vp/T1/TPG_test_0.gen/sources_1/bd/design_1/ip/design_1_axis_harris_0_0/synth/design_1_axis_harris_0_0.vhd:124]
+INFO: [Synth 8-638] synthesizing module 'axis_harris_3x3' [c:/vp/T1/TPG_test_0.gen/sources_1/bd/design_1/ipshared/a74b/src/Harris.vhd:29]
+INFO: [Synth 8-256] done synthesizing module 'axis_harris_3x3' (0#1) [c:/vp/T1/TPG_test_0.gen/sources_1/bd/design_1/ipshared/a74b/src/Harris.vhd:29]
+INFO: [Synth 8-256] done synthesizing module 'design_1_axis_harris_0_0' (0#1) [c:/vp/T1/TPG_test_0.gen/sources_1/bd/design_1/ip/design_1_axis_harris_0_0/synth/design_1_axis_harris_0_0.vhd:73]
+WARNING: [Synth 8-6014] Unused sequential element gc_d2_reg was removed.  [c:/vp/T1/TPG_test_0.gen/sources_1/bd/design_1/ipshared/a74b/src/Harris.vhd:187]
+WARNING: [Synth 8-7129] Port s_axis_tdata[23] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[22] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[21] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[20] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[19] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[18] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[17] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[16] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[15] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[14] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[13] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[12] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[11] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[10] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[9] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[8] in module axis_harris_3x3 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1444.594 ; gain = 560.246
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1444.594 ; gain = 560.246
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1444.594 ; gain = 560.246
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1444.594 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1550.125 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Le chemin d'accŠs sp‚cifi‚ est introuvable.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 1550.316 ; gain = 0.191
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1550.316 ; gain = 665.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1550.316 ; gain = 665.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1550.316 ; gain = 665.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1550.316 ; gain = 665.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 4     
+	   4 Input   32 Bit       Adders := 1     
+	   2 Input   31 Bit       Adders := 2     
+	   9 Input   22 Bit       Adders := 1     
+	   9 Input   20 Bit       Adders := 2     
+	   2 Input   10 Bit       Adders := 1     
+	   3 Input    9 Bit       Adders := 2     
+	   2 Input    9 Bit       Adders := 1     
++---Registers : 
+	               24 Bit    Registers := 1     
+	               17 Bit    Registers := 6     
+	               16 Bit    Registers := 12    
+	               10 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 5     
+	                1 Bit    Registers := 3     
++---Multipliers : 
+	              32x32  Multipliers := 1     
+	               5x32  Multipliers := 1     
++---RAMs : 
+	              10K Bit	(640 X 17 bit)          RAMs := 2     
+	              10K Bit	(640 X 16 bit)          RAMs := 4     
+	               5K Bit	(640 X 8 bit)          RAMs := 2     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 3     
+	   2 Input   31 Bit        Muxes := 2     
+	   6 Input   24 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP out_data4, operation Mode is: A*B.
+DSP Report: operator out_data4 is absorbed into DSP out_data4.
+DSP Report: operator out_data4 is absorbed into DSP out_data4.
+DSP Report: Generating DSP out_data4, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator out_data4 is absorbed into DSP out_data4.
+DSP Report: operator out_data4 is absorbed into DSP out_data4.
+DSP Report: Generating DSP out_data4, operation Mode is: A*B.
+DSP Report: operator out_data4 is absorbed into DSP out_data4.
+DSP Report: operator out_data4 is absorbed into DSP out_data4.
+DSP Report: Generating DSP out_data4, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator out_data4 is absorbed into DSP out_data4.
+DSP Report: operator out_data4 is absorbed into DSP out_data4.
+DSP Report: Generating DSP out_data7, operation Mode is: A*B.
+DSP Report: operator out_data7 is absorbed into DSP out_data7.
+DSP Report: operator out_data7 is absorbed into DSP out_data7.
+DSP Report: Generating DSP out_data7, operation Mode is: A*B.
+DSP Report: operator out_data7 is absorbed into DSP out_data7.
+DSP Report: operator out_data7 is absorbed into DSP out_data7.
+DSP Report: Generating DSP out_data7, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator out_data7 is absorbed into DSP out_data7.
+DSP Report: operator out_data7 is absorbed into DSP out_data7.
+DSP Report: Generating DSP out_data4, operation Mode is: A*B.
+DSP Report: operator out_data4 is absorbed into DSP out_data4.
+DSP Report: operator out_data4 is absorbed into DSP out_data4.
+WARNING: [Synth 8-7129] Port s_axis_tdata[23] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[22] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[21] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[20] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[19] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[18] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[17] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[16] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[15] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[14] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[13] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[12] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[11] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[10] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[9] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[8] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/gray_line1_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/gray_line1_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/xy_line1_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/xy_line1_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/xy_line2_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/xy_line2_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/yy_line1_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/yy_line1_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/yy_line2_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/yy_line2_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/xx_line1_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/xx_line1_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/xx_line2_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/xx_line2_reg",trying to implement using LUTRAM
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1550.316 ; gain = 665.969
+---------------------------------------------------------------------------------
+ Sort Area is  out_data4_7 : 0 0 : 2701 5354 : Used 1 time 0
+ Sort Area is  out_data4_7 : 0 1 : 2653 5354 : Used 1 time 0
+ Sort Area is  out_data4_9 : 0 0 : 2634 5119 : Used 1 time 0
+ Sort Area is  out_data4_9 : 0 1 : 2485 5119 : Used 1 time 0
+ Sort Area is  out_data7_2 : 0 0 : 2701 4456 : Used 1 time 0
+ Sort Area is  out_data7_2 : 0 1 : 1755 4456 : Used 1 time 0
+ Sort Area is  out_data4_0 : 0 0 : 2580 2580 : Used 1 time 0
+ Sort Area is  out_data7_5 : 0 0 : 1755 1755 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++-------------------------+-------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name              | RTL Object        | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-------------------------+-------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|design_1_axis_harris_0_0 | U0/gray_line2_reg | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++-------------------------+-------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++-------------------------+-------------------+-----------+----------------------+--------------------------------+
+|Module Name              | RTL Object        | Inference | Size (Depth x Width) | Primitives                     | 
++-------------------------+-------------------+-----------+----------------------+--------------------------------+
+|design_1_axis_harris_0_0 | U0/gray_line1_reg | Implied   | 1 K x 8              | RAM128X1S x 8 RAM256X1S x 16   | 
+|design_1_axis_harris_0_0 | U0/xy_line1_reg   | Implied   | 1 K x 17             | RAM128X1S x 17 RAM256X1S x 34  | 
+|design_1_axis_harris_0_0 | U0/xy_line2_reg   | Implied   | 1 K x 17             | RAM128X1S x 17 RAM256X1S x 34  | 
+|design_1_axis_harris_0_0 | U0/yy_line1_reg   | Implied   | 1 K x 16             | RAM128X1S x 16 RAM256X1S x 32  | 
+|design_1_axis_harris_0_0 | U0/yy_line2_reg   | Implied   | 1 K x 16             | RAM128X1S x 16 RAM256X1S x 32  | 
+|design_1_axis_harris_0_0 | U0/xx_line1_reg   | Implied   | 1 K x 16             | RAM128X1S x 16 RAM256X1S x 32  | 
+|design_1_axis_harris_0_0 | U0/xx_line2_reg   | Implied   | 1 K x 16             | RAM128X1S x 16 RAM256X1S x 32  | 
++-------------------------+-------------------+-----------+----------------------+--------------------------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++----------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name     | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|axis_harris_3x3 | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | (PCIN>>17)+A*B | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | A*B            | 15     | 15     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | A*B            | 21     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++----------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1550.316 ; gain = 665.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1550.316 ; gain = 665.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++-------------------------+-------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name              | RTL Object        | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-------------------------+-------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|design_1_axis_harris_0_0 | U0/gray_line2_reg | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++-------------------------+-------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping Report
++-------------------------+-------------------+-----------+----------------------+--------------------------------+
+|Module Name              | RTL Object        | Inference | Size (Depth x Width) | Primitives                     | 
++-------------------------+-------------------+-----------+----------------------+--------------------------------+
+|design_1_axis_harris_0_0 | U0/gray_line1_reg | Implied   | 1 K x 8              | RAM128X1S x 8 RAM256X1S x 16   | 
+|design_1_axis_harris_0_0 | U0/xy_line1_reg   | Implied   | 1 K x 17             | RAM128X1S x 17 RAM256X1S x 34  | 
+|design_1_axis_harris_0_0 | U0/xy_line2_reg   | Implied   | 1 K x 17             | RAM128X1S x 17 RAM256X1S x 34  | 
+|design_1_axis_harris_0_0 | U0/yy_line1_reg   | Implied   | 1 K x 16             | RAM128X1S x 16 RAM256X1S x 32  | 
+|design_1_axis_harris_0_0 | U0/yy_line2_reg   | Implied   | 1 K x 16             | RAM128X1S x 16 RAM256X1S x 32  | 
+|design_1_axis_harris_0_0 | U0/xx_line1_reg   | Implied   | 1 K x 16             | RAM128X1S x 16 RAM256X1S x 32  | 
+|design_1_axis_harris_0_0 | U0/xx_line2_reg   | Implied   | 1 K x 16             | RAM128X1S x 16 RAM256X1S x 32  | 
++-------------------------+-------------------+-----------+----------------------+--------------------------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance U0/gray_line2_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1550.316 ; gain = 665.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:54 . Memory (MB): peak = 1550.316 ; gain = 665.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:54 . Memory (MB): peak = 1550.316 ; gain = 665.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:54 . Memory (MB): peak = 1550.316 ; gain = 665.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:54 . Memory (MB): peak = 1550.316 ; gain = 665.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:54 . Memory (MB): peak = 1550.316 ; gain = 665.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:54 . Memory (MB): peak = 1550.316 ; gain = 665.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++----------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name     | DSP Mapping  | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|axis_harris_3x3 | A*B          | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | PCIN>>17+A*B | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | A*B          | 0      | 18     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | A*B          | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | PCIN>>17+A*B | 30     | 0      | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | A*B          | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++----------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |CARRY4    |   175|
+|2     |DSP48E1   |     7|
+|3     |LUT1      |    54|
+|4     |LUT2      |   210|
+|5     |LUT3      |   463|
+|6     |LUT4      |    42|
+|7     |LUT5      |    72|
+|8     |LUT6      |   489|
+|9     |RAM128X1S |   102|
+|10    |RAM256X1S |   204|
+|11    |RAMB18E1  |     1|
+|12    |FDRE      |   352|
++------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:54 . Memory (MB): peak = 1550.316 ; gain = 665.969
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 31 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:52 . Memory (MB): peak = 1550.316 ; gain = 560.246
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:54 . Memory (MB): peak = 1550.316 ; gain = 665.969
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1550.316 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 489 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'design_1_axis_harris_0_0' is not ideal for floorplanning, since the cellview 'axis_harris_3x3' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1550.316 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 306 instances were transformed.
+  RAM128X1S => RAM128X1S (MUXF7, RAMS64E(x2)): 102 instances
+  RAM256X1S => RAM256X1S (MUXF7(x2), MUXF8, RAMS64E(x4)): 204 instances
+
+Le chemin d'accŠs sp‚cifi‚ est introuvable.
+Synth Design complete | Checksum: 2a342639
+INFO: [Common 17-83] Releasing license: Synthesis
+29 Infos, 50 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:01:02 . Memory (MB): peak = 1550.316 ; gain = 1057.473
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1550.316 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/vp/T1/TPG_test_0.runs/design_1_axis_harris_0_0_synth_1/design_1_axis_harris_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_axis_harris_0_0, cache-ID = 9dfda79b4428b60f
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1550.316 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/vp/T1/TPG_test_0.runs/design_1_axis_harris_0_0_synth_1/design_1_axis_harris_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_axis_harris_0_0_utilization_synth.rpt -pb design_1_axis_harris_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Sep 30 17:12:54 2026...
+
+*** Running vivado
+    with args -log design_1_axis_harris_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_axis_harris_0_0.tcl
+
+
+Commande ECHO d‚sactiv‚e.
+Commande ECHO d‚sactiv‚e.
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source design_1_axis_harris_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 477.770 ; gain = 181.551
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/33651/Desktop/projet_ajc/Projet'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/33651/AppData/Roaming/Xilinx/ip_repo'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/33651/AppData/Roaming/Xilinx/ip_repo_2'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/33651/AppData/Roaming/Xilinx/ip_repo_3'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/33651/AppData/Roaming/Xilinx/ip_repo_4'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/33651/AppData/Roaming/Xilinx/ip_repo_5'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/33651/AppData/Roaming/Xilinx/ip_repo_6'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.2/data/ip'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:axi4s_driver:1.0'. The one found in IP location 'c:/Users/33651/Desktop/projet_ajc/Projet/TestPatterns/TestPatterns' will take precedence over the same IP in location c:/Users/33651/Desktop/projet_ajc/Projet/projet_TPG
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_axis_harris_0_0
+Command: synth_design -top design_1_axis_harris_0_0 -part xc7z010clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 13600
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 1324.359 ; gain = 439.961
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_axis_harris_0_0' [c:/vp/T1/TPG_test_0.gen/sources_1/bd/design_1/ip/design_1_axis_harris_0_0/synth/design_1_axis_harris_0_0.vhd:73]
+	Parameter IMAGE_WIDTH bound to: 640 - type: integer 
+	Parameter IMAGE_HEIGHT bound to: 480 - type: integer 
+	Parameter HARRIS_THRESHOLD bound to: 20000 - type: integer 
+INFO: [Synth 8-3491] module 'axis_harris_3x3' declared at 'c:/vp/T1/TPG_test_0.gen/sources_1/bd/design_1/ipshared/a74b/src/Harris.vhd:5' bound to instance 'U0' of component 'axis_harris_3x3' [c:/vp/T1/TPG_test_0.gen/sources_1/bd/design_1/ip/design_1_axis_harris_0_0/synth/design_1_axis_harris_0_0.vhd:124]
+INFO: [Synth 8-638] synthesizing module 'axis_harris_3x3' [c:/vp/T1/TPG_test_0.gen/sources_1/bd/design_1/ipshared/a74b/src/Harris.vhd:29]
+INFO: [Synth 8-256] done synthesizing module 'axis_harris_3x3' (0#1) [c:/vp/T1/TPG_test_0.gen/sources_1/bd/design_1/ipshared/a74b/src/Harris.vhd:29]
+INFO: [Synth 8-256] done synthesizing module 'design_1_axis_harris_0_0' (0#1) [c:/vp/T1/TPG_test_0.gen/sources_1/bd/design_1/ip/design_1_axis_harris_0_0/synth/design_1_axis_harris_0_0.vhd:73]
+WARNING: [Synth 8-6014] Unused sequential element gc_d2_reg was removed.  [c:/vp/T1/TPG_test_0.gen/sources_1/bd/design_1/ipshared/a74b/src/Harris.vhd:187]
+WARNING: [Synth 8-7129] Port s_axis_tdata[23] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[22] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[21] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[20] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[19] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[18] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[17] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[16] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[15] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[14] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[13] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[12] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[11] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[10] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[9] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[8] in module axis_harris_3x3 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1444.270 ; gain = 559.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 1444.270 ; gain = 559.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 1444.270 ; gain = 559.871
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1444.270 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1546.090 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Le chemin d'accŠs sp‚cifi‚ est introuvable.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 1546.172 ; gain = 0.082
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:29 . Memory (MB): peak = 1546.172 ; gain = 661.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:29 . Memory (MB): peak = 1546.172 ; gain = 661.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:29 . Memory (MB): peak = 1546.172 ; gain = 661.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:29 . Memory (MB): peak = 1546.172 ; gain = 661.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 4     
+	   4 Input   32 Bit       Adders := 1     
+	   2 Input   31 Bit       Adders := 2     
+	   9 Input   22 Bit       Adders := 1     
+	   9 Input   20 Bit       Adders := 2     
+	   2 Input   10 Bit       Adders := 1     
+	   3 Input    9 Bit       Adders := 2     
+	   2 Input    9 Bit       Adders := 1     
++---Registers : 
+	               24 Bit    Registers := 1     
+	               17 Bit    Registers := 6     
+	               16 Bit    Registers := 12    
+	               10 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 5     
+	                1 Bit    Registers := 3     
++---Multipliers : 
+	              32x32  Multipliers := 1     
+	               5x32  Multipliers := 1     
++---RAMs : 
+	              10K Bit	(640 X 17 bit)          RAMs := 2     
+	              10K Bit	(640 X 16 bit)          RAMs := 4     
+	               5K Bit	(640 X 8 bit)          RAMs := 2     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 3     
+	   2 Input   31 Bit        Muxes := 2     
+	   6 Input   24 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP out_data4, operation Mode is: A*B.
+DSP Report: operator out_data4 is absorbed into DSP out_data4.
+DSP Report: operator out_data4 is absorbed into DSP out_data4.
+DSP Report: Generating DSP out_data4, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator out_data4 is absorbed into DSP out_data4.
+DSP Report: operator out_data4 is absorbed into DSP out_data4.
+DSP Report: Generating DSP out_data4, operation Mode is: A*B.
+DSP Report: operator out_data4 is absorbed into DSP out_data4.
+DSP Report: operator out_data4 is absorbed into DSP out_data4.
+DSP Report: Generating DSP out_data4, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator out_data4 is absorbed into DSP out_data4.
+DSP Report: operator out_data4 is absorbed into DSP out_data4.
+DSP Report: Generating DSP out_data7, operation Mode is: A*B.
+DSP Report: operator out_data7 is absorbed into DSP out_data7.
+DSP Report: operator out_data7 is absorbed into DSP out_data7.
+DSP Report: Generating DSP out_data7, operation Mode is: A*B.
+DSP Report: operator out_data7 is absorbed into DSP out_data7.
+DSP Report: operator out_data7 is absorbed into DSP out_data7.
+DSP Report: Generating DSP out_data7, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator out_data7 is absorbed into DSP out_data7.
+DSP Report: operator out_data7 is absorbed into DSP out_data7.
+DSP Report: Generating DSP out_data4, operation Mode is: A*B.
+DSP Report: operator out_data4 is absorbed into DSP out_data4.
+DSP Report: operator out_data4 is absorbed into DSP out_data4.
+WARNING: [Synth 8-7129] Port s_axis_tdata[23] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[22] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[21] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[20] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[19] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[18] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[17] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[16] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[15] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[14] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[13] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[12] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[11] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[10] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[9] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdata[8] in module axis_harris_3x3 is either unconnected or has no load
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/gray_line1_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/gray_line1_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/xy_line1_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/xy_line1_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/xy_line2_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/xy_line2_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/yy_line1_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/yy_line1_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/yy_line2_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/yy_line2_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/xx_line1_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/xx_line1_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/xx_line2_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "design_1_axis_harris_0_0/U0/xx_line2_reg",trying to implement using LUTRAM
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:38 . Memory (MB): peak = 1546.172 ; gain = 661.773
+---------------------------------------------------------------------------------
+ Sort Area is  out_data4_7 : 0 0 : 2701 5354 : Used 1 time 0
+ Sort Area is  out_data4_7 : 0 1 : 2653 5354 : Used 1 time 0
+ Sort Area is  out_data4_9 : 0 0 : 2634 5119 : Used 1 time 0
+ Sort Area is  out_data4_9 : 0 1 : 2485 5119 : Used 1 time 0
+ Sort Area is  out_data7_2 : 0 0 : 2701 4456 : Used 1 time 0
+ Sort Area is  out_data7_2 : 0 1 : 1755 4456 : Used 1 time 0
+ Sort Area is  out_data4_0 : 0 0 : 2580 2580 : Used 1 time 0
+ Sort Area is  out_data7_5 : 0 0 : 1755 1755 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++-------------------------+-------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name              | RTL Object        | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-------------------------+-------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|design_1_axis_harris_0_0 | U0/gray_line2_reg | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++-------------------------+-------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++-------------------------+-------------------+-----------+----------------------+--------------------------------+
+|Module Name              | RTL Object        | Inference | Size (Depth x Width) | Primitives                     | 
++-------------------------+-------------------+-----------+----------------------+--------------------------------+
+|design_1_axis_harris_0_0 | U0/gray_line1_reg | Implied   | 1 K x 8              | RAM128X1S x 8 RAM256X1S x 16   | 
+|design_1_axis_harris_0_0 | U0/xy_line1_reg   | Implied   | 1 K x 17             | RAM128X1S x 17 RAM256X1S x 34  | 
+|design_1_axis_harris_0_0 | U0/xy_line2_reg   | Implied   | 1 K x 17             | RAM128X1S x 17 RAM256X1S x 34  | 
+|design_1_axis_harris_0_0 | U0/yy_line1_reg   | Implied   | 1 K x 16             | RAM128X1S x 16 RAM256X1S x 32  | 
+|design_1_axis_harris_0_0 | U0/yy_line2_reg   | Implied   | 1 K x 16             | RAM128X1S x 16 RAM256X1S x 32  | 
+|design_1_axis_harris_0_0 | U0/xx_line1_reg   | Implied   | 1 K x 16             | RAM128X1S x 16 RAM256X1S x 32  | 
+|design_1_axis_harris_0_0 | U0/xx_line2_reg   | Implied   | 1 K x 16             | RAM128X1S x 16 RAM256X1S x 32  | 
++-------------------------+-------------------+-----------+----------------------+--------------------------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++----------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name     | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|axis_harris_3x3 | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | (PCIN>>17)+A*B | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | A*B            | 15     | 15     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | A*B            | 21     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++----------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:48 . Memory (MB): peak = 1546.172 ; gain = 661.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:00:48 . Memory (MB): peak = 1546.172 ; gain = 661.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++-------------------------+-------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name              | RTL Object        | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-------------------------+-------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|design_1_axis_harris_0_0 | U0/gray_line2_reg | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++-------------------------+-------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping Report
++-------------------------+-------------------+-----------+----------------------+--------------------------------+
+|Module Name              | RTL Object        | Inference | Size (Depth x Width) | Primitives                     | 
++-------------------------+-------------------+-----------+----------------------+--------------------------------+
+|design_1_axis_harris_0_0 | U0/gray_line1_reg | Implied   | 1 K x 8              | RAM128X1S x 8 RAM256X1S x 16   | 
+|design_1_axis_harris_0_0 | U0/xy_line1_reg   | Implied   | 1 K x 17             | RAM128X1S x 17 RAM256X1S x 34  | 
+|design_1_axis_harris_0_0 | U0/xy_line2_reg   | Implied   | 1 K x 17             | RAM128X1S x 17 RAM256X1S x 34  | 
+|design_1_axis_harris_0_0 | U0/yy_line1_reg   | Implied   | 1 K x 16             | RAM128X1S x 16 RAM256X1S x 32  | 
+|design_1_axis_harris_0_0 | U0/yy_line2_reg   | Implied   | 1 K x 16             | RAM128X1S x 16 RAM256X1S x 32  | 
+|design_1_axis_harris_0_0 | U0/xx_line1_reg   | Implied   | 1 K x 16             | RAM128X1S x 16 RAM256X1S x 32  | 
+|design_1_axis_harris_0_0 | U0/xx_line2_reg   | Implied   | 1 K x 16             | RAM128X1S x 16 RAM256X1S x 32  | 
++-------------------------+-------------------+-----------+----------------------+--------------------------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance U0/gray_line2_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:39 ; elapsed = 00:00:49 . Memory (MB): peak = 1546.172 ; gain = 661.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:45 ; elapsed = 00:00:55 . Memory (MB): peak = 1546.172 ; gain = 661.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:45 ; elapsed = 00:00:55 . Memory (MB): peak = 1546.172 ; gain = 661.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:45 ; elapsed = 00:00:55 . Memory (MB): peak = 1546.172 ; gain = 661.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:45 ; elapsed = 00:00:55 . Memory (MB): peak = 1546.172 ; gain = 661.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:45 ; elapsed = 00:00:55 . Memory (MB): peak = 1546.172 ; gain = 661.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:45 ; elapsed = 00:00:55 . Memory (MB): peak = 1546.172 ; gain = 661.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++----------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name     | DSP Mapping  | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|axis_harris_3x3 | A*B          | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | PCIN>>17+A*B | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | A*B          | 0      | 18     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | A*B          | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | PCIN>>17+A*B | 30     | 0      | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_harris_3x3 | A*B          | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++----------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |CARRY4    |   175|
+|2     |DSP48E1   |     7|
+|3     |LUT1      |    54|
+|4     |LUT2      |   212|
+|5     |LUT3      |   463|
+|6     |LUT4      |    42|
+|7     |LUT5      |    72|
+|8     |LUT6      |   489|
+|9     |RAM128X1S |   102|
+|10    |RAM256X1S |   204|
+|11    |RAMB18E1  |     1|
+|12    |FDRE      |   352|
++------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:45 ; elapsed = 00:00:55 . Memory (MB): peak = 1546.172 ; gain = 661.773
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 31 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:52 . Memory (MB): peak = 1546.172 ; gain = 559.871
+Synthesis Optimization Complete : Time (s): cpu = 00:00:45 ; elapsed = 00:00:56 . Memory (MB): peak = 1546.172 ; gain = 661.773
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 1546.172 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 489 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'design_1_axis_harris_0_0' is not ideal for floorplanning, since the cellview 'axis_harris_3x3' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1548.961 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 306 instances were transformed.
+  RAM128X1S => RAM128X1S (MUXF7, RAMS64E(x2)): 102 instances
+  RAM256X1S => RAM256X1S (MUXF7(x2), MUXF8, RAMS64E(x4)): 204 instances
+
+Le chemin d'accŠs sp‚cifi‚ est introuvable.
+Synth Design complete | Checksum: 9f0dac1
+INFO: [Common 17-83] Releasing license: Synthesis
+31 Infos, 50 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:53 ; elapsed = 00:01:12 . Memory (MB): peak = 1548.961 ; gain = 1057.539
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1548.961 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/vp/T1/TPG_test_0.runs/design_1_axis_harris_0_0_synth_1/design_1_axis_harris_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_axis_harris_0_0, cache-ID = 4fb7b0cd5db99008
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1548.961 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/vp/T1/TPG_test_0.runs/design_1_axis_harris_0_0_synth_1/design_1_axis_harris_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_axis_harris_0_0_utilization_synth.rpt -pb design_1_axis_harris_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Sep 30 17:44:58 2026...
